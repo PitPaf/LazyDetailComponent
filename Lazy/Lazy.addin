@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+   <AddIn Type="Application">
+	  <Name>Lazy</Name>
+	  <Assembly>LazyAddins.dll</Assembly>
+	  <FullClassName>pza.App</FullClassName>
+	  <ClientId>569c23ea-7d02-4609-af28-48aeacd21c31</ClientId>
+	  <VendorId>PZA</VendorId>
+	  <VendorDescription>Piotr Żuraw Architekt, www.zurawarchitekt.pl</VendorDescription>
+   </AddIn>
+</RevitAddIns>

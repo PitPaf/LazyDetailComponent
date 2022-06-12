@@ -1,0 +1,136 @@
+﻿<Window x:Class="pza.Interface.LazyDetailView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        xmlns:local="clr-namespace:pza.Interface"
+        Title="Lazy Detail Item" 
+        Height="335" Width="400" 
+        ResizeMode="NoResize"
+        Background="WhiteSmoke" 
+        WindowStyle="SingleBorderWindow" 
+        ShowInTaskbar="False" Closed="Window_Closed">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ResourceDict - Main.xaml" />
+                <ResourceDictionary Source="ResourceDict - ComboBox.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Window.Effect>
+        <DropShadowEffect BlurRadius="15" Opacity="0.5"/>
+    </Window.Effect>
+
+    <StackPanel VerticalAlignment="Top" Margin="27,25,27,10">
+        <TextBlock Text="Name" Margin="3,0"/>
+        <Grid Margin="3,5,3,0">
+            <TextBox  x:Name="mainTextBox" d:Text="Detail_test_text"
+                 Style="{StaticResource TextBox_Round_40}"
+                      Validation.ErrorTemplate="{StaticResource validationTemplate}"
+                 MaxLength="48"
+                 Text="{Binding LazyDetailModel.DetailName, Mode=TwoWay, 
+                                ValidatesOnExceptions=True,
+                                UpdateSourceTrigger=PropertyChanged}"/>
+            <!--TextBox....Validation.ErrorTemplate="{StaticResource validationTemplate}"-->
+            <ComboBox Style="{DynamicResource ComboBoxStyle1}" 
+                      IsEditable="False"
+                  Name="existingDet" 
+                      Focusable="False"
+                  ItemsSource="{Binding LazyDetailModel.ExistingDetailNames}" 
+                  SelectedItem="{Binding LazyDetailModel.ExDetailSelectedComboBox}"
+                  Margin="0,7,0,7"/>
+        </Grid>
+        <Grid Margin="3,10,3,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="0">
+                <TextBlock Text="{Binding LazyDetailModel.DetailSelectElNumber}"
+                           d:Text="8888888"
+                           VerticalAlignment="Center"/>
+                <TextBlock Text="Objects selected"
+                           Margin="5,0"
+                           VerticalAlignment="Center"/>
+                <Button Template="{StaticResource ButtonRound}"
+                            Style="{StaticResource ButtonCircle_20}"
+                            Content="+"
+                            Margin="5,0"
+                        Command="{Binding Path=SelectElementsCommand}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="2">
+                <TextBlock Text="Base point:"
+                           VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding LazyDetailModel.DetailBasePointText}"
+                           d:Text="Center"
+                           VerticalAlignment="Center" 
+                           Margin="5,0"/>
+                <Button Template="{StaticResource ButtonRound}"
+                            Style="{StaticResource ButtonCircle_20}"
+                            Content="+"
+                            Margin="5,0,0,0"
+                        Command="{Binding Path=SelectBasePointCommand}"/>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Orientation="Horizontal" Margin="3,35,3,0">
+            <CheckBox Content="Copy line styles" 
+                      IsChecked="{Binding LazyDetailModel.DetailCopyLineStyle, Mode=TwoWay}"
+                      d:IsChecked="True"
+                      Template="{StaticResource CheckBox_Circle}"/>
+            <CheckBox Content="Delete  objects" 
+                      Margin="30,0" 
+                      IsChecked="{Binding LazyDetailModel.DetailDeleteElements, Mode=TwoWay}"
+                      d:IsChecked="True"
+                      Template="{StaticResource CheckBox_Circle}"/>
+        </StackPanel>
+
+        <Grid Margin="3,10,3,0">
+            
+                <Button Template="{StaticResource ButtonRound}"
+                    Style="{StaticResource ButtonCircle_20}"
+                    Content="..." 
+                    HorizontalAlignment="Left" 
+                    Height="20" 
+                    VerticalAlignment="Top"
+                    Command="{Binding Path=FileOpenCommand}"/>
+                <TextBlock Text="Template File:"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Margin="30,0,0,0" />
+                <TextBlock Name="FileName_TextBlock"
+                       Text="{Binding LazyDetailModel.DetailTemplateFileName}"
+                       d:Text="Detail_Item_Metric.rfa"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Margin="110,0,0,0"
+                       Width="225"
+                       TextTrimming="CharacterEllipsis"/>
+        </Grid>
+        
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+            <Button Style="{StaticResource ButtonRound_100}" 
+                    Template="{StaticResource ButtonRound}"
+                    Name="btnCreate"
+                    Content="Create"
+                    Margin="0,0,10,0"
+                    IsDefault="True"
+                    Command="{Binding Path=CreateCommand}"/>
+
+            <Button Style="{StaticResource ButtonRound_100}"
+                    Template="{DynamicResource ButtonRound}" 
+                    Content="Cancel" 
+                    IsCancel="True"
+                    Click="ButtonCancel_Click"/>
+            <!--Command="{Binding Path=CancelCommand}"-->
+        </StackPanel>
+        
+    </StackPanel>
+
+</Window>
