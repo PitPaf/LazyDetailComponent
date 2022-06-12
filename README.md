@@ -1,5 +1,5 @@
 # Convert Revit detail elements to Detail Component with one click
-You can draw detail elements in model view and just change it to Component
+You can draw detail elements in model view and change it to Component. Add-in takes selected elements, creates detail family and place it back in model view.
 
 ![LazyDetailComponentUI](https://user-images.githubusercontent.com/72662709/173247776-9e880693-62f6-4b01-9acc-6d6dbf81a3b7.png)
 
