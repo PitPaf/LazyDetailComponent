@@ -44,8 +44,8 @@ Manually copy "Lazy.addin" & "LazyAddins.dll" from [Github Lazy Folder](https://
 
 **Issues**
 
-Make sure folder you placed add-in is read/write allowed. If the folder is write protected this blocks add-in to save config file so blocks proper work. By default config file is saved as LazyAddins.dll.config
-If you meet any issue fith file access contact your admin to change access setup. Config file can be deleted to reset default starting configuration.
+Make sure folder you placed add-in is read/write allowed. If it is write protected this blocks add-in to save config file and may cause problem. By default config file is saved as LazyAddins.dll.config
+If you meet any issue contact your admin to change file access setup. Config file can be deleted to reset default starting configuration.
 
 ## My Links
 
