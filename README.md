@@ -40,7 +40,7 @@ Works on Revit 2018, 2020, 2022
 
 ## Installation
 
-Manually copy "Lazy.addin" & "LazyAddins.dll" from [Inatall Folder](https://github.com/PitPaf/LazyDetailComponent/tree/master/Install) to add-in folder on your PC eg "C:\Users\ [ your user name ] \AppData\Roaming\Autodesk\Revit\Addins\ [ Revit version ]".
+Manually copy "Lazy.addin" & "LazyAddins.dll" from [>Install Folder<](https://github.com/PitPaf/LazyDetailComponent/tree/master/Install) to add-in folder on your PC eg "C:\Users\ [ your user name ] \AppData\Roaming\Autodesk\Revit\Addins\ [ Revit version ]".
 
 **Issues**
 
