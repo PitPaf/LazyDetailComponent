@@ -21,18 +21,18 @@ You can draw detail elements in model view and change it to Component. Add-in ta
 
 **First run**
 
-When running first time select detail family template in the Add-in interface. Add-in remember your selection for future use. For detail component you need plane-based template eg Metric Detail Item.rft
+When running first time select detail family template in the Add-in interface. The Add-in remember your selection for future use. For detail component you need plane-based template eg Metric Detail Item.rft
 
 **Features**
 
 - View Types - works in all model views where it is possible to draw detail lines and filled regions (plans, sections, elevations, drafting views, legends, detail views) 
-- Name - by default name is filled automatically with template name: [Prefix]_[UserName]_[Date]_[Time]. You can choose from drop down list one of name existing in model to speed up typing or to follow your naming convention. When typing, name "Create" button is disabled if name already been used in model. To change default Prefix - type text and use option at the end of drop down list (hidden pro feature).
-- Selection - elements can be selected before add-in was run. In Add-in interface use "+" button to add or remove elements from selection. After selection process finished hit "Finish" Button to return to interface.
+- Name - by default name is filled automatically with template name: [Prefix]_[UserName]_[Date]_[Time]. You can choose from drop down list one of the names existing in model to speed up typing or follow your naming convention. When typing, name "Create" button is disabled if name already been used in model. To change default Prefix - type text and use option at the end of drop down list (hidden pro feature).
+- Selection - elements can be selected before add-in is run. In Add-in interface use "+" button to add or remove elements from selection. After selection process finished hit "Finish" Button to return to interface.
 - Base Point - select specific Detail Component base point. Use "+" button to choose any specific in view or stay with default (Center). When selecting point hit Esc on keyboard to return to default Center.
-- Copy line styles - you can choose if line styles will be copied to detail family. Copied line styles can be managed in Manage > Object Styles > Model Object > Detail Items. If copy option is not selected all lines in detail family will be set as default (Detail Items)
-- Delate objects - set Add-in behaviour whether elements in model view will be deleted after Detail Component creation
-- Template File - select detail family template used as an base template for Detail Components creation. For this purpose choose plain-based detail item eg Metric Detail Item.rft This can be found in Revit Library as common in folder C:\ProgramData\Autodesk\RVT... The user selection will be saved to config file.
-- Configuration - all setups made in the add-in interface are stored in config file, so next time you run add-in all properties looks same. Config file is stored in add-in location. Make sure add-in folder have read/write access allowed.
+- Copy line styles - you can choose if line styles will be copied to the detail family. Copied line styles can be managed in Manage > Object Styles > Model Object > Detail Items. If the copy option is not selected, all lines in the detail family will be set as default (Detail Items)
+- Delete objects - set Add-in behaviour whether elements in model view will be deleted after the Detail Component creation
+- Template File - select a detail family template used as an base template for Detail Components creation. For this purpose choose plane-based detail item eg Metric Detail Item.rft. This can be found in the Revit Library in the following folder C:\ProgramData\Autodesk\RVT... The user selection will be saved to config file.
+- Configuration - all setups made in the add-in interface are stored in config file, so next time you run the add-in all properties will look same. Config file is stored in the add-in location. Make sure you have read/write access in the folder.
 
 ## Tested Revit Versions
 
@@ -44,7 +44,7 @@ Manually copy "Lazy.addin" & "LazyAddins.dll" from [>Install Folder<](https://gi
 
 **Issues**
 
-Make sure folder you placed add-in is read/write allowed. If it is write protected this blocks add-in to save config file and may cause problem. By default config file is saved as LazyAddins.dll.config
+Make sure you have read/write access in the folder you placed the add-in files. If it is write protected, it will prevent the add-in from saving the config file and may cause issues. By default config file is saved as **LazyAddins.dll.config**
 If you meet any issue contact your admin to change file access setup. Config file can be deleted to reset default starting configuration.
 
 ## My Links
